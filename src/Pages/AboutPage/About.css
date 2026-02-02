@@ -1,0 +1,105 @@
+.hero-section1 {
+  position: relative;
+  background-image: url('../../assets/logo_about.svg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.hero-section1 .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.hero-section1 .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.about3{
+  position: relative;
+  background-image: url('../../assets/logoabout4.svg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin: 80px;
+  border-radius: 12px;
+}
+.about3 .overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  opacity: 0;
+}
+.about3 .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.corkabout {
+  position: relative;
+}
+
+.corkabout::after {
+  content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 360px;
+    aspect-ratio: 1 / 1;
+  background-image: url('../../assets/cork.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+.corkabout2 {
+  position: relative;
+}
+
+.corkabout2::after {
+  content: "";
+    position: absolute;
+    left: 0px;
+    top: 220px;
+    width: 360px;
+    aspect-ratio: 1 / 1;
+  background-image: url('../../assets/cork.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+.corkabout1{
+  position: relative;
+}
+
+.corkabout1::after {
+  content: "";
+  position: absolute;
+  right:0px;
+  top:0px;
+
+  width: 360px;
+  aspect-ratio: 1 / 1;
+
+  background-image: url(/src/assets/cork_1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right top;
+
+  z-index: 0;
+  pointer-events: none;
+}

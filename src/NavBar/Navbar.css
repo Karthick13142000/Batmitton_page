@@ -1,0 +1,17 @@
+.navbar-transparent {
+  background-color: transparent !important;
+}
+
+/* Optional: make hamburger icon white on transparent background */
+.navbar-toggler {
+  border-color: rgba(255,255,255,0.7);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+/* Navbar.css */
+.active-link {
+  color: #F57921 !important;
+  font-weight: 600;
+}

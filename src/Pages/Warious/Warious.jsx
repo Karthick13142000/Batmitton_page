@@ -75,7 +75,7 @@ export default function Warious() {
                             <div style={{ position: 'relative' }}>
                                 <div className="client-circle "></div>
                                 <div>
-                                    <img src={client1} style={{ width: '50%' }} />
+                                    <img src={client1}  className="coach-img" />
                                     <h2 style={{ fontSize: '32px', color: '#F57921', marginTop: '32px' }}>Vishnu</h2>
                                     <h4 style={{ fontSize: '20px', color: '#F57921', fontWeight: '400', marginTop: '12px' }}>Head Coach & Founder</h4>
                                 </div>

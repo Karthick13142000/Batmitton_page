@@ -1,26 +1,61 @@
-/* Navbar Transparent */
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-
-/* Hero Section Example */
+/* =========================
+   HERO SECTION
+========================= */
 .hero-section {
   position: relative;
   background-image: url('../../assets/HomePng.svg');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #fff;
+  padding: 20px;
   cursor: url("../../assets/cork.svg"), auto;
 }
+
+.hero-section .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 70px;
+  font-weight: 700;
+}
+
+.hero-content p {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 26px;
+}
+
+/* Book Button */
 .book-btn {
   width: 154px;
   height: 44px;
   border-radius: 8px;
   border: 1px solid #F57921;
   color: #F57921;
-  background-color: transparent;
+  background: transparent;
   margin-top: 16px;
   font-size: 16px;
   font-weight: 600;
@@ -28,75 +63,33 @@
   transition: all 0.3s ease;
 }
 
-/* arrow hidden by default */
 .book-btn .arrow {
   opacity: 0;
-  transition: all 0.3s ease;
   margin-right: -12px;
+  transition: all 0.3s ease;
 }
 
-/* hover styles */
 .book-btn:hover {
   background-color: #F57921;
   color: #fff;
 }
 
-/* show arrow on hover */
 .book-btn:hover .arrow {
   opacity: 1;
-    margin-right: 8px;
-
+  margin-right: 8px;
 }
 
+/* =========================
+   SECTION 2 – CORK
+========================= */
 .corksection {
   background-image: url('../../assets/cork.svg');
-  /* cork texture */
   background-repeat: no-repeat;
   background-size: contain;
   background-position: left center;
-  position: relative;
-  bottom: 30px;
   height: 50vh;
-}
-.cork {
   position: relative;
 }
-
-.cork::after {
-  content: "";
-    position: absolute;
-    right: 0px;
-    top: -190px;
-    width: 360px;
-    aspect-ratio: 1 / 1;
-    background-image: url(/src/assets/cork_1.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-}
-.cork1 {
-  position: relative;
-}
-
-.cork1::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: -290px;
-
-  width: 360px;
-  aspect-ratio: 1 / 1;
-
-  background-image: url(/src/assets/cork_1.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: right top;
-
-  z-index: 0;
-  pointer-events: none;
-}
-
-
 
 .corksection h1 {
   font-family: 'Montserrat', sans-serif;
@@ -112,48 +105,61 @@
   padding-top: 60px;
 }
 
-.hero-section .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 1;
+/* =========================
+   CORK DECORATION
+========================= */
+.cork,
+.cork1 {
+  position: relative;
 }
 
-.hero-section .hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
+.cork::after,
+.cork1::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -190px;
+  width: 360px;
+  aspect-ratio: 1 / 1;
+  background-image: url(/src/assets/cork_1.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cork1::after {
+  top: -290px;
+  z-index: 0;
+}
+
+/* =========================
+   TRAINERS SECTION
+========================= */
+.trainer1,
+.trainer2 {
+  height: 50px;
+  font-size: 20px;
+  font-weight: 700;
+  border: 1px solid #F57921;
+  border-radius: 8px;
+  background: transparent;
+  color: #F57921;
+  margin-top: 25px;
+  padding: 10px;
 }
 
 .trainer1 {
   width: 284px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: 700;
-  border: 1px solid #F57921;
-  border-radius: 8px;
-  background-color: transparent;
-  color: #F57921;
-  margin-top: 25px;
-  padding: 10px;
 }
 
 .trainer2 {
   width: 212px;
-  height: 50px;
-  font-size: 20px;
-  font-weight: 700;
-  border: 1px solid #F57921;
-  border-radius: 8px;
-  background-color: transparent;
-  color: #F57921;
-  margin-top: 25px;
-  padding: 10px;
 }
 
+/* =========================
+   OFFER SECTION
+========================= */
 .offer-section {
   margin-top: 100px;
 }
@@ -166,36 +172,25 @@
   margin-bottom: 40px;
 }
 
-.studenttraining {
+.studenttraining,
+.studenttraining1 {
   background: #1E1E1E;
   border-radius: 12px;
   padding: 30px;
   color: #fff;
-  max-height: 490px; 
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 }
-.studenttraining1{
+
+.studenttraining {
+  max-height: 490px;
+}
+
+.studenttraining1 {
+  height: 490px;
   text-align: center;
-   background: #1E1E1E;
-  border-radius: 12px;
-  padding: 30px;
-  color: #fff;
-  height: 490px; 
-  width: 600px;
   position: relative;
-  z-index: 9999;
-}
-.training-center{
-      display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding-top: 25%;
-}
-.center-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 2;
 }
 
 .training-title {
@@ -226,4 +221,178 @@
   line-height: 1.5;
 }
 
+.training-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 25%;
+}
+/* =========================
+   EXTRA SMALL MOBILE (≤375px)
+========================= */
+@media (max-width: 375px) {
 
+  /* HERO */
+  .hero-section{width: 103%;}
+  .hero-content h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .book-btn {
+    width: 120px;
+    height: 38px;
+    font-size: 13px;
+  }
+
+  /* SECTION 2 – CORK */
+  .corksection h1 {
+    font-size: 20px;
+    padding: 60px 16px;
+    line-height: 1.3;
+  }
+
+  .image-wrapper {
+    padding-top: 10px;
+  }
+
+  /* TRAINER BUTTONS */
+  .trainer1,
+  .trainer2 {
+    font-size: 14px;
+    height: auto;
+    padding: 8px;
+  }
+
+  /* OFFER SECTION */
+  .offer-title {
+    font-size: 26px;
+    margin-bottom: 24px;
+  }
+
+  .training-title {
+    font-size: 22px;
+  }
+
+  .row-item {
+    gap: 10px;
+  }
+
+  .row-item img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .row-item span {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .studenttraining,
+  .studenttraining1 {
+    padding: 20px;
+  }
+
+  /* CORK BACKGROUND FIX */
+  .cork::after,
+  .cork1::after {
+    width: 160px;
+    top: -90px;
+  }
+}
+
+/* =========================
+   MOBILE VIEW (≤576px)
+========================= */
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .book-btn {
+    width: 130px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .corksection {
+    height: auto;
+    background-position: center;
+    text-align: center;
+  }
+
+  .corksection h1 {
+    font-size: 24px;
+    padding: 80px 20px;
+  }
+
+  .image-wrapper {
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .trainer1,
+  .trainer2 {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .training-title {
+    font-size: 24px;
+  }
+
+  .row-item span {
+    font-size: 16px;
+  }
+
+  .studenttraining,
+  .studenttraining1 {
+    height: auto;
+  }
+
+  .training-center {
+    padding-top: 40px;
+  }
+
+  .cork::after,
+  .cork1::after {
+    width: 200px;
+    top: -120px;
+  }
+}
+
+/* =========================
+   TABLET PORTRAIT (≤768px)
+========================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE (768px–992px)
+========================= */
+@media (min-width: 768px) and (max-width: 992px) {
+  .training-title {
+    font-size: 26px;
+  }
+
+  .row-item span {
+    font-size: 18px;
+  }
+}

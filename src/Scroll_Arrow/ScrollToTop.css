@@ -2,15 +2,65 @@
   position: fixed;
   bottom: 32px;
   right: 32px;
-  width: 62px;
-  height: 42px;
-  border-radius: 3px;
-  background-color: #f57921; 
-  color: #fff;
-  font-size: 22px;
+
+  width: 48px;
+  height: 48px;
+
+  background-color: #f57921;
   border: none;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
   z-index: 10000;
+
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* arrow icon size fix */
+.scroll-top-btn img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
 
+/* hover effect */
+.scroll-top-btn:hover {
+  background-color: #e56712;
+}
+
+/* click effect */
+.scroll-top-btn:active {
+  transform: scale(0.95);
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+  .scroll-top-btn {
+    width: 42px;
+    height: 42px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .scroll-top-btn img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 577px) and (max-width: 991px) {
+  .scroll-top-btn {
+    width: 46px;
+    height: 46px;
+  }
+
+  .scroll-top-btn img {
+    width: 17px;
+    height: 17px;
+  }
+}

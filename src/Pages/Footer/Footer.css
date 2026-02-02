@@ -1,6 +1,9 @@
+/* =========================
+   FOOTER BASE
+========================= */
 .footer {
   background-color: #fff;
-  padding: 60px 0;
+  padding: 60px 20px;
 }
 
 .footer-container {
@@ -11,6 +14,9 @@
   gap: 40px;
 }
 
+/* =========================
+   FOOTER COLUMNS
+========================= */
 .footer-col {
   flex: 1;
 }
@@ -27,19 +33,25 @@
   max-width: 270px;
 }
 
+/* =========================
+   FOOTER HEADINGS
+========================= */
 .footer-col h4 {
   color: #ff6a00;
   margin-bottom: 15px;
   font-size: 20px;
-  display: inline-block;       /* IMPORTANT */
+  display: inline-block;
   padding-bottom: 6px;
   border-bottom: 3px solid #F57921;
 }
 
-
+/* =========================
+   FOOTER LIST
+========================= */
 .footer-col ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-col ul li {
@@ -47,15 +59,110 @@
   cursor: pointer;
   font-size: 18px;
   color: #F57921;
+  transition: transform 0.2s ease;
 }
 
+.footer-col ul li:hover {
+  transform: translateX(5px);
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
 .social-icons {
   display: flex;
   gap: 32px;
-  margin-top: 136px;
+  margin-top: 40px;
 }
 
 .social-icons img {
   width: 32px;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   MOBILE VIEW (≤576px)
+========================= */
+@media (max-width: 576px) {
+  .footer {
+    padding: 40px 16px;
+    text-align: center;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer-logo {
+    margin: 0 auto 12px;
+  }
+
+  .footer-col p {
+    font-size: 16px;
+    max-width: 100%;
+    margin: auto;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+  }
+
+  .footer-col ul li {
+    font-size: 16px;
+  }
+
+  /* MOVE SOCIAL ICONS TO BOTTOM */
+  .social-icons {
+    order: 99;
+    justify-content: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(245, 121, 33, 0.3);
+  }
+}
+
+/* =========================
+   TABLET PORTRAIT (≤768px)
+========================= */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .footer-col {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .footer-col p {
+    margin: auto;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+/* =========================
+   TABLET LANDSCAPE (768px–992px)
+========================= */
+@media (min-width: 768px) and (max-width: 992px) {
+  .footer-container {
+    gap: 30px;
+  }
+
+  .footer-col p {
+    font-size: 18px;
+  }
+
+  .footer-col ul li {
+    font-size: 17px;
+  }
 }

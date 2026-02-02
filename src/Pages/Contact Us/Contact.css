@@ -4,16 +4,18 @@
 
 .corkcontact::after {
   content: "";
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 360px;
-    aspect-ratio: 1 / 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 360px;
+  aspect-ratio: 1 / 1;
   background-image: url('../../assets/cork.svg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
 }
+
+/* SECTION */
 .contact-section {
   padding: 80px 0;
 }
@@ -22,9 +24,10 @@
   padding-top: 20px;
 }
 
+/* CONTACT ITEMS */
 .contact-item {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
   margin-bottom: 30px;
 }
@@ -33,6 +36,7 @@
 .contact-item li {
   margin: 0;
   color: #444;
+  font-size: 16px;
 }
 
 .contact-item ul {
@@ -53,7 +57,9 @@
 }
 
 .icon-box img {
-  width: 28px;
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
 }
 
 /* FORM */
@@ -67,8 +73,7 @@
   padding: 30px;
   border-radius: 16px;
   width: 100%;
-      max-width: 743px;
-    height: 453px;
+  max-width: 743px;
 }
 
 .contact-form-box input,
@@ -78,6 +83,7 @@
   border-radius: 8px;
   border: none;
   margin-bottom: 15px;
+  font-size: 14px;
 }
 
 .submit-btn {
@@ -88,4 +94,86 @@
   padding: 12px;
   border-radius: 8px;
   font-weight: 600;
+}
+@media (max-width: 576px) {
+
+  /* CORK HIDE */
+  .corkcontact::after {
+    display: none;
+  }
+
+  /* HERO TEXT SAFE */
+  h1 {
+    font-size: 24px !important;
+    text-align: center;
+  }
+
+  p {
+    font-size: 16px !important;
+    text-align: center;
+  }
+
+  /* CONTAINER FIX */
+  .container-fluid {
+    margin-left: 0 !important;
+    padding: 0 16px !important;
+  }
+
+  /* CONTACT ITEMS */
+  .contact-item {
+    gap: 14px;
+  }
+
+  .icon-box {
+    width: 48px;
+    height: 48px;
+  }
+
+  .icon-box img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* FORM */
+  .contact-right {
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .contact-form-box {
+    padding: 20px;
+  }
+
+  /* MAP */
+  iframe {
+    height: 300px;
+  }
+}
+@media (min-width: 577px) and (max-width: 991px) {
+
+  .corkcontact::after {
+    width: 220px;
+    opacity: 0.4;
+  }
+
+  h1 {
+    font-size: 28px !important;
+  }
+
+  p {
+    font-size: 18px !important;
+  }
+
+  .contact-right {
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .contact-form-box {
+    max-width: 100%;
+  }
+
+  iframe {
+    height: 400px;
+  }
 }

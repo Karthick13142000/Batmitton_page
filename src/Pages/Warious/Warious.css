@@ -1,8 +1,14 @@
+/* ================= GLOBAL SAFETY ================= */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= HERO ================= */
 .hero-section2 {
   position: relative;
-  background-image: url('../../assets/Warious.svg');
-  background-size: cover;
-  background-position: center;
+  background: url('../../assets/Warious.svg') center/cover no-repeat;
   height: 60vh;
   display: flex;
   justify-content: center;
@@ -13,7 +19,7 @@
 .hero-section2 .overlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background: rgba(0,0,0,0.6);
   z-index: 1;
 }
 
@@ -23,72 +29,108 @@
   text-align: center;
 }
 
-.corkwarious {
-  position: relative;
+.hero-title {
+  font-family: 'Charm';
+  font-size: 70px;
+  color: #F57921;
 }
 
-.corkwarious::after {
-  content: "";
+.hero-link {
+  font-family: 'Charm';
+  color: #9E9E9E;
+  margin: 0 4px;
+}
+
+/* ================= SECTION HEADINGS ================= */
+.section-title {
+  font-size: 32px;
+  color: #F57921;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-desc {
+  font-size: 20px;
+  color: #333;
+  text-align: center;
+  margin-top: 32px;
+  line-height: 39px;
+}
+
+.section-desc strong {
+  font-weight: 700;
+}
+
+/* ================= COACH SECTION ================= */
+.coach-row {
+  margin-top: 120px;
+}
+
+/* IMAGE COLUMN */
+.coach-img-wrapper {
+  position: relative;        /* 🔥 MUST */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ORANGE CIRCLE */
+.coach-circle {
   position: absolute;
-  left: 0;
-  top: 80px;
-  width: 360px;
-  aspect-ratio: 1 / 1;
-  background: url('../../assets/cork.svg') no-repeat center / cover;
-  z-index: -1;
-}
-
-/* coach circles */
-.client-circle,
-.client-circle1 {
   width: 300px;
   height: 300px;
-  background-color: #ff7a00;
+  background-color: #F57921;
   border-radius: 50%;
-  position: absolute;
-  top: -20px;
-  z-index: -1;
+  top: 20px;
+  z-index: -1;               /* 🔥 FIX */
 }
 
-.client-circle {
-  left: 174px;
-}
-
-.client-circle1 {
-  right: 174px;
-}
-
-.corkwarious1 {
+/* IMAGE */
+.coach-img {
+  width: 50%;
   position: relative;
+  z-index: 1;
 }
 
-.corkwarious1::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 270px;
-  width: 360px;
-  aspect-ratio: 1 / 1;
-  background: url('/src/assets/cork_1.svg') no-repeat right top / contain;
-  pointer-events: none;
+/* TEXT COLUMN */
+.coach-content {
+  color: #333;               /* 🔥 FIX */
+}
+
+.coach-name {
+  font-size: 32px;
+  color: #F57921;
+  margin-top: 32px;
+}
+
+.coach-role {
+  font-size: 20px;
+  color: #F57921;
+  font-weight: 400;
+  margin-top: 12px;
+}
+
+/* ALTERNATE */
+.coach-row.reverse {
+  flex-direction: row-reverse;
 }
 
 /* ================= SLIDER ================= */
-
 .slider-section {
-  margin-top: 80px;
+  margin-top: 120px;
   overflow: hidden;
-  width: 100%;
 }
 
-.slider {
-  width: 100%;
-  overflow: hidden;
+.slider-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #F57921;
+  text-align: center;
 }
 
 .slide-track {
   display: flex;
-  width: max-content;   /* 🔥 IMPORTANT FIX */
+  width: max-content;
   animation: scroll 35s linear infinite;
   margin-top: 80px;
 }
@@ -108,95 +150,78 @@
   border-radius: 12px;
 }
 
-/* animation */
 @keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
+
+/* ================= MOBILE ================= */
 @media (max-width: 576px) {
 
-  .hero-section2 {
-    height: 45vh;
-    padding: 20px;
+  .hero-title {
+    font-size: 36px;
   }
 
-  .hero-section2 h1 {
-    font-size: 36px !important;
+  .section-title {
+    font-size: 24px;
   }
 
-  p {
-    font-size: 16px !important;
-    line-height: 28px !important;
-    padding: 0 12px;
+  .section-desc {
+    font-size: 16px;
+    line-height: 28px;
   }
 
-  h1 { font-size: 24px !important; }
-  h2 { font-size: 22px !important; }
-  h4 { font-size: 16px !important; }
+  .coach-row,
+  .coach-row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
 
-  /* coach circles center */
-  .client-circle,
-  .client-circle1 {
+  .coach-circle {
     width: 180px;
     height: 180px;
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
     top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
-  .col-lg-6 {
-    margin-bottom: 60px;
-  }
-
-  /* 🔥 ONLY COACH IMAGES */
   .coach-img {
     width: 70%;
-    height: auto;
   }
 
-  /* slider */
-  .slide-track {
-    animation-duration: 22s;
+  .coach-content {
+    margin-top: 30px;
   }
 
+  .coach-name {
+    font-size: 22px;
+  }
+
+  .coach-role {
+    font-size: 16px;
+  }
   .img-wrapper img {
     width: 150px;
     height: 220px;
   }
-
-  /* hide cork */
-  .corkwarious::after,
-  .corkwarious1::after {
-    display: none;
-  }
 }
+
+/* ================= TABLET ================= */
 @media (min-width: 577px) and (max-width: 991px) {
 
-  .hero-section2 {
-    height: 50vh;
+  .hero-title {
+    font-size: 48px;
   }
 
-  .hero-section2 h1 {
-    font-size: 48px !important;
-  }
-
-  p {
-    font-size: 18px !important;
-    line-height: 32px !important;
+  .section-desc {
+    font-size: 18px;
+    line-height: 32px;
     padding: 0 40px;
   }
 
-  .client-circle,
-  .client-circle1 {
-    width: 220px;
-    height: 220px;
-    left: 50%;
-    transform: translateX(-50%);
+  .coach-circle {
+    width: 240px;
+    height: 240px;
   }
 
   .coach-img {
@@ -206,11 +231,5 @@
   .img-wrapper img {
     width: 180px;
     height: 280px;
-  }
-
-  .corkwarious::after,
-  .corkwarious1::after {
-    width: 220px;
-    opacity: 0.4;
   }
 }

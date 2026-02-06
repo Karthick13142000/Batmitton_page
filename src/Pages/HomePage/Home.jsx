@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from '../../assets/logo.svg';
 import './Home.css';
@@ -10,24 +10,64 @@ import calender from '../../assets/calendar_month.svg'
 import time from '../../assets/schedule.svg'
 import Footer from "../Footer/Footer";
 import ScrollToTop from "../../Scroll_Arrow/ScrollToTop";
+import floatingCork from "../../assets/new_cork.svg"
 export default function Home() {
+  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+const [showCork, setShowCork] = useState(false);
+const handleMouseMove = (e) => {
+  setMouse({
+    x: e.clientX,
+    y: e.clientY,
+  });
+};
   return (
     <div>
 
       <ScrollToTop />
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="overlay"></div>
-        <div className="hero-content">
-          <h1 style={{ fontSize: '70px' }}>Train. Grow. Win.</h1>
-          <p style={{ fontSize: '20px', fontFamily: 'sans-serif', fontWeight: '400px', marginTop: '26px' }}>Powered by expert coaching, Advanced training, and a Culture built <span style={{ color: '#F57921' }}>for Everyone.</span></p>
-          <button className="book-btn">
-            <span className="arrow">→</span>
-            Book Now
-          </button>
+   <section
+  className="hero-section"
+  onMouseMove={handleMouseMove}
+  onMouseEnter={() => setShowCork(true)}
+  onMouseLeave={() => setShowCork(false)}
+>
+  <div className="overlay"></div>
 
-        </div>
-      </section>
+  <div className="hero-content">
+    <h1 style={{ fontSize: '70px' }}>Train. Grow. Win.</h1>
+
+    <p
+      style={{
+        fontSize: '20px',
+        fontFamily: 'sans-serif',
+        fontWeight: '400px',
+        marginTop: '26px',
+      }}
+    >
+      Powered by expert coaching, Advanced training, and a Culture built{' '}
+      <span style={{ color: '#F57921' }}>for Everyone.</span>
+    </p>
+
+    <button className="book-btn">
+      <span className="arrow">→</span>
+      Book Now
+    </button>
+  </div>
+
+  {/* 🔥 Floating cork cursor */}
+  {showCork && (
+    <img
+      src={floatingCork}
+      className="floating-cork"
+      style={{
+        left: mouse.x,
+        top: mouse.y,
+      }}
+      alt="cork"
+    />
+  )}
+</section>
+
       {/* sec2 */}
       <section className="mt-4">
         <div >
@@ -113,11 +153,11 @@ export default function Home() {
                 <div className="training-block">
                   <div className="row-item">
                     <img src={calender} alt="calendar" />
-                    <span>Mon – Friday</span>
+                    <span>Tuesday – Thursday</span>
                   </div>
                   <div className="row-item">
                     <img src={time} alt="time" />
-                    <span>5:30 PM – 7:00 PM</span>
+                    <span>5:00 PM – 7:00 PM</span>
                   </div>
                 </div>
 
@@ -128,32 +168,23 @@ export default function Home() {
                   </div>
                   <div className="row-item">
                     <img src={time} alt="time" />
-                    <span>2:00 PM – 4:00 PM & 4:00 PM – 6:00 PM</span>
+                    <span>2:00 PM – 4:00 PM & 5:00 PM – 7:00 PM</span>
                   </div>
                 </div>
 
                 <div className="training-block">
                   <div className="row-item">
                     <img src={calender} alt="calendar" />
-                    <span>Saturday</span>
+                    <span>Saturday & Sunday</span>
                   </div>
                   <div className="row-item" style={{ alignItems: 'baseline', display: 'flex' }}>
                     <img src={time} alt="time" />
                     <span>
-                      11:00 AM – 1:00 PM, 2:00 PM – 4:00 PM, 5:00 PM – 7:00 PM
+                      11:00 AM – 1:00 PM, 1:00 PM – 2:00 PM, 5:00 PM – 7:00 PM
                     </span>
                   </div>
                 </div>
-                <div className="training-block">
-                  <div className="row-item">
-                    <img src={calender} alt="calendar" />
-                    <span>Friday</span>
-                  </div>
-                  <div className="row-item">
-                    <img src={time} alt="time" />
-                    <span>02:00AM - 4:00PM and 4:00pm - 06:00PM</span>
-                  </div>
-                </div>
+               
 
               </div>
             </div>

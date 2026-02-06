@@ -48,7 +48,7 @@ export default function Contact() {
             {/* sec2 */}
             <div className="corkcontact"></div>
             <section>
-                <div className="container-fluid" style={{ marginTop: '100px', marginLeft: '50px' }}>
+                <div className="container-fluid contactcontainer" >
                     <div>
                         <h1 style={{ fontSize: '36px', fontWeight: '700', color: '#F57921' }}>Let’s Talk Badminton, <br></br>Growth & Goals</h1>
                         <p style={{ fontSize: '20px', fontWeight: '300', color: '#F57921' }}>Our team is always here to support your journey—whether you're booking a<br></br> session, exploring our programs, or simply curious.</p>
@@ -114,22 +114,22 @@ export default function Contact() {
 
                                 <div className="row">
                                     <div className="col-md-6">
-                                        <h1 style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Name</h1>
+                                        <label style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Name</label>
                                         <input placeholder="Name" />
                                     </div>
                                     <div className="col-md-6">
-                                        <h1 style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Email</h1>
+                                        <label style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Email</label>
 
                                         <input placeholder="Email" />
                                     </div>
                                 </div>
 
                                 <div>
-                                    <h1 style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Phone Number</h1>
+                                    <label style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Phone Number</label>
                                     <input placeholder="Phone Number" />
                                 </div>
                                 <div>
-                                    <h1 style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Message</h1>
+                                    <label style={{ fontSize: '16px', color: '#4A4A4A', fontWeight: '500' }}>Message</label>
                                     <textarea rows="4" placeholder="Message"></textarea>
                                 </div>
 

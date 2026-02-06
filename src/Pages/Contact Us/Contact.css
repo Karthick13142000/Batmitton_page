@@ -14,7 +14,10 @@
   background-size: cover;
   z-index: -1;
 }
-
+.contactcontainer{
+  margin-top: 100px;
+  margin-left: 50px;
+}
 /* SECTION */
 .contact-section {
   padding: 80px 0;
@@ -95,46 +98,79 @@
   border-radius: 8px;
   font-weight: 600;
 }
-@media (max-width: 576px) {
 
+@media (max-width: 576px) {
+  .contactcontainer{
+ 
+  margin-left: 20px !important;
+}
+   h1, h2, h3 {
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+p {
+        font-size: 16px !important;
+        line-height: 28px !important;
+        padding: 0 4px;
+    }
   /* CORK HIDE */
   .corkcontact::after {
     display: none;
   }
 
-  /* HERO TEXT SAFE */
-  h1 {
-    font-size: 24px !important;
+  /* HERO SECTION ONLY CENTER */
+
+  .hero-section p {
     text-align: center;
   }
 
-  p {
-    font-size: 16px !important;
-    text-align: center;
+  /* RESET GLOBAL CENTER ISSUE */
+  .contact-section h1,
+  .contact-section p,
+  .contact-section li {
+    text-align: left !important;
   }
 
-  /* CONTAINER FIX */
-  .container-fluid {
-    margin-left: 0 !important;
-    padding: 0 16px !important;
-  }
-
-  /* CONTACT ITEMS */
+  /* CONTACT ITEM ALIGN FIX */
   .contact-item {
+    display: flex;
+    align-items: flex-start;
     gap: 14px;
   }
 
+  .contact-item div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ICON SIZE */
   .icon-box {
     width: 48px;
     height: 48px;
+    flex-shrink: 0;
   }
 
   .icon-box img {
-    width: 22px;
-    height: 22px;
+    width: 36px;
+    height: 24px;
+    padding-left: 10px;
   }
 
-  /* FORM */
+  /* ADDRESS LIST */
+  .contact-item ul {
+    padding-left: 18px;
+    margin: 0;
+  }
+
+  /* CONTAINER FIX */
+  .container,
+  .container-fluid {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* FORM CENTER */
   .contact-right {
     justify-content: center;
     margin-top: 40px;
@@ -142,13 +178,14 @@
 
   .contact-form-box {
     padding: 20px;
+    width: 100%;
   }
 
-  /* MAP */
   iframe {
     height: 300px;
   }
 }
+
 @media (min-width: 577px) and (max-width: 991px) {
 
   .corkcontact::after {

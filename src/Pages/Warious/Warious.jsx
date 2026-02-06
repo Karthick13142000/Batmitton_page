@@ -67,71 +67,75 @@ export default function Warious() {
                 </div>
             </section>
             {/* sec4 */}
-            <section >
-                <div className="corkwarious1"></div>
-                <div className="container" style={{ marginTop: '80px' }}>
-                    <div className="row" style={{ justifyContent: 'center' }}>
-                        <div className="col-lg-6" style={{ textAlign: 'center' }}>
-                            <div style={{ position: 'relative' }}>
-                                <div className="client-circle "></div>
-                                <div>
-                                    <img src={client1}  className="coach-img" />
-                                    <h2 style={{ fontSize: '32px', color: '#F57921', marginTop: '32px' }}>Vishnu</h2>
-                                    <h4 style={{ fontSize: '20px', color: '#F57921', fontWeight: '400', marginTop: '12px' }}>Head Coach & Founder</h4>
-                                </div>
+         <section className="coaches-section">
+  <div className="container">
 
-                            </div>
-                        </div>
-                        <div className="col-lg-6" style={{ textAlign: 'center' }}>
-                            <div style={{ position: 'relative' }}>
-                                <div className="client-circle1 "></div>
-                                <div>
-                                    <img src={client2} style={{ width: '50%' }} />
-                                    <h2 style={{ fontSize: '32px', color: '#F57921', marginTop: '32px' }}>Sanjay</h2>
-                                    <h4 style={{ fontSize: '20px', color: '#F57921', fontWeight: '400', marginTop: '12px' }}>Head Coach & Founder</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  {[
+    {
+      name: "Vishnu",
+      role: "Head Coach & Founder",
+      img: client1,
+      desc: [
+        "Our coaches are certified, experienced, and performance-driven professionals who have consistently produced results over the last 5 years in UAE ranking and competitive tournaments.",
+        "We focus on long-term athlete development, technical excellence, mental strength, and disciplined training culture."
+      ]
+    },
+    {
+      name: "Sanjay",
+      role: "Senior Coach",
+      img: client2,
+      desc: [
+        "Our coaches are certified, experienced, and performance-driven professionals who have consistently produced results over the last 5 years in UAE ranking and competitive tournaments.",
+        "We focus on long-term athlete development, technical excellence, mental strength, and disciplined training culture."
+      ]
+    },
+    {
+      name: "Praveen",
+      role: "Coach",
+      img: client3,
+      desc: [
+        "Our coaches are certified, experienced, and performance-driven professionals who have consistently produced results over the last 5 years in UAE ranking and competitive tournaments.",
+        "We focus on long-term athlete development, technical excellence, mental strength, and disciplined training culture."
+      ]
+    },
+    {
+      name: "Dave",
+      role: "Coach",
+      img: client4,
+      desc: [
+        "Our coaches are certified, experienced, and performance-driven professionals who have consistently produced results over the last 5 years in UAE ranking and competitive tournaments.",
+        "We focus on long-term athlete development, technical excellence, mental strength, and disciplined training culture."
+      ]
+    }
+  ].map((coach, index) => (
+    <div
+      key={index}
+      className={`row coach-row align-items-center ${
+        index % 2 !== 0 ? "reverse" : ""
+      }`}
+    >
+      {/* IMAGE */}
+      <div className="col-lg-6 coach-img-wrapper">
+        <div className="coach-circle"></div>
+        <img src={coach.img} alt={coach.name} className="coach-img" />
+      </div>
 
+      {/* CONTENT */}
+      <div className="col-lg-6 coach-content">
+        <h2 className="coach-name">{coach.name}</h2>
+        <h4 className="coach-role">{coach.role}</h4>
 
-                </div>
-            </section>
+        {coach.desc.map((text, i) => (
+          <p key={i}>{text}</p>
+        ))}
+      </div>
+    </div>
+  ))}
 
-            {/* sec5 */}
-            <section >
-                <div className="corkwarious"></div>
-                <div className="container" style={{ marginTop: '80px' }}>
+</div>
 
-                    <div className="row" style={{ justifyContent: 'center' }}>
-                        <div className="col-lg-6" style={{ textAlign: 'center' }}>
-                            <div style={{ position: 'relative' }}>
-                                <div className="client-circle "></div>
-                                <div>
-                                    <img src={client3} style={{ width: '65%', margin: '-30px 0px 0px 40px;' }} />
-                                    <h2 style={{ fontSize: '32px', color: '#F57921', marginTop: '32px' }}>Praveen</h2>
-                                    <h4 style={{ fontSize: '20px', color: '#F57921', fontWeight: '400', marginTop: '12px' }}>Assistant Coach</h4>
-                                </div>
+</section>
 
-                            </div>
-                        </div>
-
-                        <div className="col-lg-6" style={{ textAlign: 'center' }}>
-                            <div style={{ position: 'relative' }}>
-                                <div className="client-circle1 "></div>
-                                <div>
-                                    <img src={client4} style={{ width: '50%' }} />
-                                    <h2 style={{ fontSize: '32px', color: '#F57921', marginTop: '32px' }}>Dave</h2>
-                                    <h4 style={{ fontSize: '20px', color: '#F57921', fontWeight: '400', marginTop: '12px' }}>Assistant Coach</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </section>
             {/* sec6 */}
               <section className="slider-section">
                 <h1 style={{color:'#F57921',fontSize:'36px',fontWeight:'700',textAlign:'center'}}>The Art</h1>

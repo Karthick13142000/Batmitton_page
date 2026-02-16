@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../assets/logo.svg";
 import "../NavBar/Navbar.css";
@@ -7,11 +7,18 @@ import "../NavBar/Navbar.css";
 export default function NavigationBar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
+   
+    const navigate = useNavigate();
 
     // Close menu on route change
     useEffect(() => {
         setMenuOpen(false);
     }, [location]);
+
+    const handleBookNow = (e) => {
+        e.preventDefault();
+         navigate("/contact", { state: { scrollTo: "form" } });
+    };
 
     return (
         <nav
@@ -87,7 +94,7 @@ export default function NavigationBar() {
 
                 {/* Book Now */}
                 <div className="position-absolute end-0 top-0 mt-2 me-3 d-none d-lg-block">
-                    <button className="book-btn">Book Now</button>
+                    <button className="book-btn" type="button" onClick={handleBookNow}>Book Now</button>
                 </div>
             </div>
         </nav>

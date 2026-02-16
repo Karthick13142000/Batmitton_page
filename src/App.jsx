@@ -5,10 +5,12 @@ import Warious from "./Pages/Warious/Warious";
 import NavigationBar from "./NavBar/NavigationBar";
 import "./App.css";
 import Contact from "./Pages/Contact Us/Contact";
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <NavigationBar />
 
       <Routes>

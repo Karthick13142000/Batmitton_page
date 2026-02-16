@@ -7,14 +7,39 @@ import mobile from "../../assets/mobile.svg";
 import Address from "../../assets/location_on.svg";
 import Email from "../../assets/mail.svg";
 import Footer from "../Footer/Footer";
+import { useLocation } from "react-router-dom";
+import { useRef, useEffect } from "react";
 
 export default function Contact() {
     const [activeLocation, setActiveLocation] = useState("loc1");
+const location = useLocation();
+const formRef = useRef(null);
+const mapRef = useRef(null);
+
 
     const locations = {
         loc1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.7048914845386!2d55.364645374840194!3d25.280510928322173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c80ae33bf%3A0x9d8c2b8a8fd30a8!2sAmity%20School%20Dubai!5e0!3m2!1sen!2sin!4v1769878833095!5m2!1sen!2sin",
         loc2: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14427.421341725352!2d55.4300556952889!3d25.309064040413826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5edbeb14fb59%3A0x1297d0079a09c4ba!2sIndustrial%20Area%2013%20-%20Sharjah!5e0!3m2!1sen!2sin!4v1769878889896!5m2!1sen!2sin"
     };
+useEffect(() => {
+  if (!location.state?.scrollTo) return;
+
+  setTimeout(() => {
+    if (location.state.scrollTo === "form" && formRef.current) {
+      formRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    if (location.state.scrollTo === "map" && mapRef.current) {
+      mapRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, 100);
+}, [location]);
 
     return (
         <div>
@@ -61,7 +86,7 @@ export default function Contact() {
                     <div className="row align-items-start">
 
                         {/* LEFT */}
-                        <div className="col-lg-6 contact-left">
+                        <div className="col-lg-6 contact-left" >
 
                             <div className="contact-item">
                                 <div className="icon-box">
@@ -110,7 +135,7 @@ export default function Contact() {
 
                         {/* RIGHT */}
                         <div className="col-lg-6 contact-right">
-                            <div className="contact-form-box">
+                            <div className="contact-form-box" ref={formRef}>
 
                                 <div className="row">
                                     <div className="col-md-6">
@@ -145,6 +170,7 @@ export default function Contact() {
                 <div
                     className="container-fluid"
                     style={{ marginTop: "100px", padding: "0 50px" }}
+                     ref={mapRef}
                 >
                     {/* Location Tabs */}
                     <div style={{ marginBottom: "12px" }}>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from '../../assets/logo.svg';
 import './Home.css';
@@ -11,62 +11,71 @@ import time from '../../assets/schedule.svg'
 import Footer from "../Footer/Footer";
 import ScrollToTop from "../../Scroll_Arrow/ScrollToTop";
 import floatingCork from "../../assets/new_cork.svg"
+import { useNavigate } from "react-router-dom";
 export default function Home() {
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
-const [showCork, setShowCork] = useState(false);
-const handleMouseMove = (e) => {
-  setMouse({
-    x: e.clientX,
-    y: e.clientY,
-  });
+  const [showCork, setShowCork] = useState(false);
+  const [hideCork, setHideCork] = useState(false);
+  const navigate = useNavigate();
+
+  const handleMouseMove = (e) => {
+    setMouse({
+      x: e.clientX,
+      y: e.clientY,
+    });
+  };
+    const handleBookNow = (e) => {
+    e.preventDefault(); 
+    navigate("/contact", { state: { scrollTo: "form" } });
 };
   return (
     <div>
 
       <ScrollToTop />
       {/* Hero Section */}
-   <section
-  className="hero-section"
-  onMouseMove={handleMouseMove}
-  onMouseEnter={() => setShowCork(true)}
-  onMouseLeave={() => setShowCork(false)}
->
-  <div className="overlay"></div>
+      <section
+        className="hero-section"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setShowCork(true)}
+        onMouseLeave={() => setShowCork(false)}
+      >
+        <div className="overlay"></div>
 
-  <div className="hero-content">
-    <h1 style={{ fontSize: '70px' }}>Train. Grow. Win.</h1>
+        <div className="hero-content">
+          <h1 style={{ fontSize: '70px' }}>Train. Grow. Win.</h1>
 
-    <p
-      style={{
-        fontSize: '20px',
-        fontFamily: 'sans-serif',
-        fontWeight: '400px',
-        marginTop: '26px',
-      }}
-    >
-      Powered by expert coaching, Advanced training, and a Culture built{' '}
-      <span style={{ color: '#F57921' }}>for Everyone.</span>
-    </p>
+          <p
+            style={{
+              fontSize: '20px',
+              fontFamily: 'sans-serif',
+              fontWeight: '400px',
+              marginTop: '26px',
+            }}
+          >
+            Powered by expert coaching, Advanced training, and a Culture built{' '}
+            <span style={{ color: '#F57921' }}>for Everyone.</span>
+          </p>
 
-    <button className="book-btn">
-      <span className="arrow">→</span>
-      Book Now
-    </button>
-  </div>
+          <button className="book-btn" onMouseEnter={() => setHideCork(true)}
+            onMouseLeave={() => setHideCork(false)} onClick={handleBookNow}>
+            <span className="arrow">→</span>
+            Book Now
+          </button>
+        </div>
 
-  {/* 🔥 Floating cork cursor */}
-  {showCork && (
-    <img
-      src={floatingCork}
-      className="floating-cork"
-      style={{
-        left: mouse.x,
-        top: mouse.y,
-      }}
-      alt="cork"
-    />
-  )}
-</section>
+        {/* Floating cork cursor */}
+        {showCork && !hideCork && (
+          <img
+            src={floatingCork}
+            className="floating-cork"
+            style={{
+              left: mouse.x,
+              top: mouse.y,
+            }}
+            alt="cork"
+          />
+        )}
+      </section>
 
       {/* sec2 */}
       <section className="mt-4">
@@ -184,7 +193,7 @@ const handleMouseMove = (e) => {
                     </span>
                   </div>
                 </div>
-               
+
 
               </div>
             </div>

@@ -1,10 +1,16 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";   // 👈 Import Link
 import "../Footer/Footer.css";
 import logo from "../../assets/logo1.svg";
 import instagram from "../../assets/Instagram.svg";
 import whatsapp from "../../assets/Whatsapp.svg";
 
 const Footer = () => {
+   const navigate = useNavigate();
+   const handleBookNow = (e) => {
+        e.preventDefault();
+       navigate("/contact", { state: { scrollTo: "map" } });
+    };
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -13,11 +19,16 @@ const Footer = () => {
         <div className="footer-col">
           <img src={logo} alt="Feathers Sports" className="footer-logo" />
           <p>
-          <span style={{color:'#F57921',fontWeight:'800'}}> Feathers Sports</span> Forging disciplined, high-performance<br></br> badminton athletes in Dubai.
+            <span style={{ color: '#F57921', fontWeight: '800' }}>
+              Feathers Sports
+            </span>{" "}
+            Forging disciplined, high-performance
+            <br />
+            badminton athletes in Dubai.
           </p>
 
           <div className="social-icons">
-            <img src={instagram} alt="Instagram" />
+          <a href="https://www.instagram.com/featherssports_llc/" target="_blank"> <img src={instagram} alt="Instagram"  /></a> 
             <img src={whatsapp} alt="WhatsApp" />
           </div>
         </div>
@@ -26,10 +37,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Quick Navigation</h4>
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Warriors</li>
-            <li>Contact Us</li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/warriors">Warriors</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
           </ul>
         </div>
 
@@ -37,7 +48,7 @@ const Footer = () => {
         <div className="footer-col">
           <h4>Reach Us</h4>
           <ul>
-            <li>Location</li>
+            <li onClick={handleBookNow}>Location</li>
             <li>Phone Number</li>
             <li>Email</li>
           </ul>

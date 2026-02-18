@@ -6,11 +6,11 @@ import instagram from "../../assets/Instagram.svg";
 import whatsapp from "../../assets/Whatsapp.svg";
 
 const Footer = () => {
-   const navigate = useNavigate();
-   const handleBookNow = (e) => {
-        e.preventDefault();
-       navigate("/contact", { state: { scrollTo: "map" } });
-    };
+  const navigate = useNavigate();
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    navigate("/contact", { state: { scrollTo: "map" } });
+  };
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -28,8 +28,10 @@ const Footer = () => {
           </p>
 
           <div className="social-icons">
-          <a href="https://www.instagram.com/featherssports_llc/" target="_blank"> <img src={instagram} alt="Instagram"  /></a> 
-            <img src={whatsapp} alt="WhatsApp" />
+            <a href="https://www.instagram.com/featherssports_llc/" target="_blank"> <img src={instagram} alt="Instagram" /></a>
+            <a href="https://wa.me/971521140123"
+              target="_blank"
+              rel="noopener noreferrer"> <img src={whatsapp} alt="WhatsApp" /></a> 
           </div>
         </div>
 

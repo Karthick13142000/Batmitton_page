@@ -162,7 +162,7 @@ export default function Home() {
                 <div className="training-block">
                   <div className="row-item">
                     <img src={calender} alt="calendar" />
-                    <span>Tuesday – Thursday</span>
+                    <span>Monday – Thursday</span>
                   </div>
                   <div className="row-item">
                     <img src={time} alt="time" />

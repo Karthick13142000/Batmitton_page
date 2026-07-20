@@ -43,8 +43,25 @@ export default function About() {
             <section style={{ marginTop: '100px' }}>
 
                 <div >
-                    <h2 style={{ color: '#F57921', fontSize: '36px', fontWeight: '700', textAlign: 'center' }}>Welcome to Featherssports</h2>
+                    <h2 style={{ color: '#F57921', fontSize: '36px', fontWeight: '700', textAlign: 'center' }}>Welcome to Feathers Sports</h2>
                     <h4 style={{ color: '#F57921', fontSize: '32px', fontWeight: '400', textAlign: 'center' }}>“Rise Above Your Limits..”</h4>
+                    <p
+                        style={{
+                            color: '#F57921',
+                            fontSize: '20px',
+                            fontWeight: '400',
+                            textAlign: 'center',
+                            maxWidth: '900px',
+                            width: '90%',
+                            margin: '20px auto',
+                            lineHeight: '1.8',
+                            padding: '0 15px',
+                        }}
+                    >
+                        Feathers Sports is committed to developing athletes and individuals through
+                        structured coaching, discipline, and a positive sporting culture. We strive
+                        to inspire confidence, resilience, and excellence both on and off the court.
+                    </p>
                 </div>
                 <h1 style={{ color: '#F57921', fontSize: '36px', fontWeight: '700', textAlign: 'left', paddingTop: '40px', paddingLeft: '50px' }}>What we do?</h1>
                 <div className="row pt-5 px-5">
@@ -192,7 +209,7 @@ export default function About() {
 
             </section>
             {/* sec5 */}
-              <div className="corkabout1"></div>
+            <div className="corkabout1"></div>
             <section className="about3">
                 <div className="overlay"></div>
                 <div className="hero-content">
@@ -203,9 +220,9 @@ export default function About() {
                 </div>
             </section>
             {/* footer */}
-             <div className="corkabout2"></div>
+            <div className="corkabout2"></div>
             <Footer />
-           
+
         </div>
     )
 }

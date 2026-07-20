@@ -177,7 +177,7 @@ export default function Home() {
                   </div>
                   <div className="row-item">
                     <img src={time} alt="time" />
-                    <span>2:00 PM – 4:00 PM & 5:00 PM – 7:00 PM</span>
+                    <span>2:00 PM – 4:00 PM & 4:00 PM – 6:00 PM</span>
                   </div>
                 </div>
 
@@ -189,7 +189,7 @@ export default function Home() {
                   <div className="row-item" style={{ alignItems: 'baseline', display: 'flex' }}>
                     <img src={time} alt="time" />
                     <span>
-                      11:00 AM – 1:00 PM, 1:00 PM – 2:00 PM, 5:00 PM – 7:00 PM
+                      11:00 AM – 1:00 PM, 2:00 PM – 4:00 PM, 5:00 PM – 7:00 PM
                     </span>
                   </div>
                 </div>
@@ -206,7 +206,7 @@ export default function Home() {
                 <div className="training-center">
                   <div className="row-item">
                     <img src={calender} alt="calendar" />
-                    <span>Fri - Sunday</span>
+                    <span>Friday - Saturday & Sunday</span>
                   </div>
 
                   <div className="row-item">

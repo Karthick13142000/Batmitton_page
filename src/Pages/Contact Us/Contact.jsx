@@ -127,7 +127,7 @@ useEffect(() => {
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', }}>
                                     <h1 style={{ color: '#333333', fontSize: '16px' }}>Email</h1>
-                                    <p>feathersportswe@gmail.com</p>
+                                    <p>featherssportsuae@gmail.com</p>
                                 </div>
                             </div>
 

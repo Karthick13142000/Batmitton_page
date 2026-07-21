@@ -8,18 +8,18 @@ import client3 from "../../assets/client3.svg"
 import client4 from "../../assets/client4.svg"
 import ScrollToTop from "../../Scroll_Arrow/ScrollToTop";
 import img1 from "../../assets/img1.svg"
-import img2 from "../../assets/img2.svg"
-import img3 from "../../assets/img3.svg"
+// import img2 from "../../assets/img2.svg"
+// import img3 from "../../assets/img3.svg"
 import img4 from "../../assets/img4.svg"
 import img5 from "../../assets/img5.svg"
-import img6 from "../../assets/img6.svg"
+// import img6 from "../../assets/img6.svg"
 import img7 from "../../assets/img7.svg"
 import img8 from "../../assets/img8.svg"
 import img9 from "../../assets/img9.svg"
 import Footer from "../Footer/Footer";
 export default function Warious() {
     const [isActive, setIsActive] = useState(false)
-    const images =[img1,img2,img3,img4,img5,img6,img7,img8,img9]
+    const images =[img1,img4,img5,img7,img8,img9]
     return (
         <div>
             <ScrollToTop />

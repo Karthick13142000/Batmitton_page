@@ -11,14 +11,14 @@ import { useLocation } from "react-router-dom";
 import { useRef, useEffect } from "react";
 
 export default function Contact() {
-    const [activeLocation, setActiveLocation] = useState("loc1");
+    const [activeLocation, setActiveLocation] = useState("loc2");
 const location = useLocation();
 const formRef = useRef(null);
 const mapRef = useRef(null);
 
 
     const locations = {
-        loc1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.7048914845386!2d55.364645374840194!3d25.280510928322173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c80ae33bf%3A0x9d8c2b8a8fd30a8!2sAmity%20School%20Dubai!5e0!3m2!1sen!2sin!4v1769878833095!5m2!1sen!2sin",
+        // loc1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.7048914845386!2d55.364645374840194!3d25.280510928322173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c5c80ae33bf%3A0x9d8c2b8a8fd30a8!2sAmity%20School%20Dubai!5e0!3m2!1sen!2sin!4v1769878833095!5m2!1sen!2sin",
         loc2: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14427.421341725352!2d55.4300556952889!3d25.309064040413826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5edbeb14fb59%3A0x1297d0079a09c4ba!2sIndustrial%20Area%2013%20-%20Sharjah!5e0!3m2!1sen!2sin!4v1769878889896!5m2!1sen!2sin"
     };
 useEffect(() => {
@@ -104,7 +104,7 @@ useEffect(() => {
                                 </div>
                                 <div style={{ display: 'flex', flexDirection: 'column', }}>
                                     <h1 style={{ color: '#333333', fontSize: '16px' }}>Mobile</h1>
-                                    <p>+971 52 114 0123</p>
+                                    <p>+971 54 449 1069</p>
                                 </div>
                             </div>
 
@@ -174,7 +174,7 @@ useEffect(() => {
                 >
                     {/* Location Tabs */}
                     <div style={{ marginBottom: "12px" }}>
-                        <button
+                        {/* <button
                             onClick={() => setActiveLocation("loc1")}
                             style={{
                                 padding: "6px 14px",
@@ -188,7 +188,7 @@ useEffect(() => {
                             }}
                         >
                             Location 1
-                        </button>
+                        </button> */}
 
                         <button
                             onClick={() => setActiveLocation("loc2")}

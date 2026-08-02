@@ -73,7 +73,7 @@ export default function Warious() {
   {[
     {
       name: " Coach Vishnu",
-      role: "Performance & Technical Coach",
+      role: "Founder & Head Coach ",
       img: client1,
       desc: [
         "Our coaches are certified, experienced, and performance-driven professionals who have consistently produced results over the last 5 years in UAE ranking and competitive tournaments.",
@@ -82,7 +82,7 @@ export default function Warious() {
     },
     {
       name: " Coach Sanjay",
-      role: "Head Coach & Founder",
+      role: "Founder & Senior Coach",
       img: client2,
       desc: [
         "Our coaches are certified, experienced, and performance-driven professionals who have consistently produced results over the last 5 years in UAE ranking and competitive tournaments.",
@@ -99,7 +99,7 @@ export default function Warious() {
       ]
     },
     {
-      name: "Dave",
+      name: " Coach Dev",
       role: " Assistant Coach",
       img: client4,
       desc: [
